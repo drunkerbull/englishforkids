@@ -1,0 +1,26 @@
+{
+  "name": "home-page",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src/modules/pages/home-page/src",
+  "prefix": "english-test",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "src/modules/pages/home-page/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "src/modules/pages/home-page/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "src/modules/pages/home-page/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    }
+  }
+}

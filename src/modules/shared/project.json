@@ -1,0 +1,26 @@
+{
+  "name": "shared",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src/modules/shared/src",
+  "prefix": "english-test",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "src/modules/shared/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "src/modules/shared/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "src/modules/shared/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    }
+  }
+}
